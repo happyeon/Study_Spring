@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
+  <display-name>Spring07_HelloMVC</display-name>
+
+	<!-- TODO : 01. listener -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/applicationContext.xml</param-value>
+	</context-param>
+	
+	<!-- TODO : 02. DispatcherServlet (hello-servlet) -->
+	<!-- servlet : 요청이 들어오면 해당 요청을 받아서 처리하고 처리된 결과를 리턴(응답), java 코드 안에 html 코드가 들어간다. -->
+	<!-- <servlet-name>에 정의된 hello에 -servlet을 붙인 xml 파일이 이 web.xml과 같은 폴더 안에 안에 있으면 자동으로 DispatcherServlet의 설정파일로 읽힌다.  -->
+	<!-- 렌더링 : HelloController.java에서 Model And View을 받아서, 거기서 ViewName을 찾아서 해당 View의 Model 객체 안에 있던 값을 넣어서 컴파일 -->
+	<!-- DispatcherServlet : 요청 받아서 어떤 컨트롤러 호출할 건지, 그리고 컨트롤러가 응답해준거 어떻게 response해줄건지 (front controller) -->
+	<servlet>
+		<servlet-name>hello</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+	</servlet>
+	
+	<!-- /*.do 아님!!! -->
+	<servlet-mapping>
+		<servlet-name>hello</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 
+	요청이 들어오면
+	ContextLoaderListener가 받아서 어떤 xml이 필요한지 로딩해준다.
+	그래서 DispatcherServlet가 어떤 Controller에 연결해줘야 하는지 Handler Mapping을 통해서 전달해준다.
+	Controller는 Service, Service는 Repository, Repository는 DB로 이동하고
+	응답받아서 다시 돌아와서 ModelAndView 객체를 다시 DispatcherServlet에 준다.
+	DispatcherServlet 내부에 있는 ViewResolver에 ModelAndView를 주면 ViewResolver가 Veiw를 찾아서 응답
+	 -->
+
+</web-app>

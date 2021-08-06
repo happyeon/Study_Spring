@@ -1,0 +1,40 @@
+SpringMVC03
+
+01. pom.xml
+	ojdbc6, mybatis, mybatis-spring, commons-dbcp, spring-orm
+	
+02. web.xml
+
+03. /WEB-INF/spring/sqls/test.sql
+
+04. dto, dao, biz, controller
+
+05. src/main/resources/mybatis/myboard-mapper.xml
+
+06. src/main/resources/mybatis/db.properties
+
+07. /WEB-INF/spring/sqls/config.xml
+
+08. applicationContext.xml
+
+_filter
+09. com.mvc.upgrade.common.filter/LogFilter (impl javax.servlet.Filter)
+10. web.xml
+
+_aop
+11. pom.xml : aspectjweaver, aspectjrt
+12. com.mvc.upgrade.common.aop/LogAop
+13. WEB-INF/spring/appServlet/aop-context.xml
+14. web.xml
+15. src/main/resources/log4j.xml
+
+_login
+16. pom.xml : jackson-core-sal, jackson-mapper-asl (4.* 이후부터는 jackson-core, jackson-databind)
+17. WEB-INF/spring/sqls/test.sql
+18. dto, dao, biz, controller
+19. src/main/resources/mybatis/member-mapper.xml
+20. WEB-INF/spring/sqls/config.xml
+
+_interceptor
+21. com.mvc.upgrade.common.interceptor/LoginInterceptor (impl HandlerInterceptor)
+22. WEB-INF/spring/appServlet/servlet-context.xml

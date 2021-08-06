@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="SpringMVC03_filter"/>
+<aop-project name="SpringMVC03_filter_aop_login_interceptor"/>
+<aop-project name="SpringMVC03_filter_aop_login_interceptor_transaction"/>
+<aop-project name="SpringMVC04_file"/>
+<aop-project name="SpringMVC05_update"/>
+<aop-project name="SpringMVC03_filter_aop_login_interceptor_transaction_security"/>
+</aop-reference-model>

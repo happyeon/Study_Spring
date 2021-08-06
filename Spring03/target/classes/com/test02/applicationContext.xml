@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- 1명은 생성자 주입 -->
+	<bean id="p1" class="com.test02.Emp">
+		<constructor-arg name="name" value="김혜수" />
+		<constructor-arg name="salary" value="9999999" />
+	</bean>
+	
+	<!-- 1명은 setter 주입 -->
+	<bean id="p2" class="com.test02.Emp">
+		<property name="name" value="김서형" />
+		<property name="salary" value="9999990" />
+	</bean>
+	
+</beans>

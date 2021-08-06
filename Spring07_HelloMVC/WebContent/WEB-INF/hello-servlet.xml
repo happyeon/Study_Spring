@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<!-- com.hello.mvc부터 그 밑에 있는 모든 패키지와 클래스를 읽으면서 그 안에 있는 annotation을 설정 -->
+	<context:component-scan base-package="com.hello.mvc" />
+	
+	<!-- mvc와 관련된 annotation 처리 -->
+	<mvc:annotation-driven />
+	
+</beans>

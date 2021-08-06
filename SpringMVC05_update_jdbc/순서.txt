@@ -1,0 +1,21 @@
+_update
+1. web.xml : 2.5 -> 4.0
+2. pom.xml
+	java : 1.6 -> 11
+	spring : 3.1.1 -> 5.3.7
+	servlet-api -> javax.servlet-api : 2.5 -> 4.0.1
+	jsp-api -> javax.servlet.jsp-api : 2.1 -> 2.3.3
+	maven-compiler-plugin source/target : 1.6 -> 11
+3. project facets
+	dynamic web module : 2.5 -> 4.0
+	java: 1.6 -> 11
+4. maven update
+
+_jdbc
+5. pom.xml : spring-jdbc, ojdbc6
+6. web.xml
+7. src/main/resources/sqls
+	jdbc.sql
+	db.properties
+8. applicationContext.xml
+9. dto, dao, biz, controller

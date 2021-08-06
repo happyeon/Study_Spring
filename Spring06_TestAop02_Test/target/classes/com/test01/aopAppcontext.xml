@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+
+	<aop:aspectj-autoproxy />
+	
+	<bean id="myAdvice" class="com.test01.MyAdvice" />
+	<bean id="person01" class="com.test01.Person" />
+	<bean id="person02" class="com.test01.Person" />
+	
+	<aop:config>
+		<aop:aspect ref="myAdvice">
+			<aop:pointcut expression="execution(public * sayName(..))" id="sayNamePointcut"/>
+			<aop:before method="beforeSaying" pointcut-ref="sayNamePointcut"/>
+			<aop:after method="afterSaying" pointcut-ref="sayNamePointcut"/>
+			<aop:after-returning method="afterReturnSaying" pointcut-ref="sayNamePointcut"/>
+		</aop:aspect>
+	</aop:config>
+	
+</beans>
+
+<!-- after와 after-returning의 순서 바뀌면 결과도 바뀐다. -->

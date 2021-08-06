@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="favoriteFood" name="favoriteFood" class="com.test03.Food">
+		<property name="name" value="잡채" />
+		<property name="price" value="5000" />
+	</bean>
+	
+	<bean id="unFavoriteFood" class="com.test03.Food">
+		<constructor-arg name="name" value="오이" />
+		<constructor-arg name="price" value="1000" />
+	</bean>
+	
+	<!--  
+	<bean id="myFood" class="com.test03.MyFood">
+		<property name="favoriteFood" ref="favoriteFood" />
+		<property name="unFavoriteFood" ref="unFavoriteFood"></property>
+	</bean> 
+	-->
+	
+	<!-- 
+		autowire 속성값
+		1. byName : setter와 같은 이름이 있으면 자동 할당 (id속성 혹은 name 속성)
+		2. byType : setter와 같은 타입이 있으면 자동 할당 -> 같은 타입의 빈이 두 개 이상 있으면 예외 발생!
+		3. constructor : 생성자의 파라미터와 같은 타입이 있으면 자동 할당 (id나 name으로 호출)
+		4. default : constructor -> byType
+					 생성자의 파라미터와 같은 타입의 bean이 있으면 자동 할당해주고, 없으면 byType으로 넘어간다.
+					 * 기본 생성자가 있으면, 기본 생성자 호출
+	 -->
+	<bean id="myFood" class="com.test03.MyFood" autowire="default" />
+	
+	
+</beans>

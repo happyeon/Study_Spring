@@ -1,0 +1,4 @@
+1622102348736	Move 'root-context.xml' to 'appServlet'
+1622102360163	Rename resource 'root-context.xml'
+1622102745216	Move 'jdbc.sql' to 'sqls'
+1622108146421	Rename resource 'ApplicationContext.xml'

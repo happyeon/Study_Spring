@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move &apos;css&apos; to &apos;static&apos;" description="Move &apos;css&apos; to &apos;static&apos;" destination="src/main/resources/static" element1="/StartBoot02/src/main/resources/static/css" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="1" stamp="1622279796166" updateReferences="true"/>
+</session>

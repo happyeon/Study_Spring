@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="today" class="java.util.Date" />
+	
+	<!-- year : 1900년이 기본 값 -->
+	<bean id="start" class="java.util.Date">
+		<property name="year" value="121" />
+		<property name="month" value="0" />
+		<property name="date" value="12" />
+	</bean>
+	
+	<bean id="myClass" class="com.test01.MyClass" lazy-init="true" />
+	
+	<bean id="beanTest" class="com.test01.BeanTest">
+		<!-- 1. BeanTest(Date date) 호출 -->
+		<constructor-arg name="date" ref="start" />
+		
+		<!-- 2. setMyClass(MyClass myClass) 호출 -->
+		<property name="myClass" ref="myClass"></property>
+		
+		<!-- 3. setDate(Date date) 호출 -->
+		<property name="date" ref="start"></property>
+		
+		<!-- 4. setNumber(int num) 호출 -->
+		<property name="number">
+			<value type="short">100</value>
+		</property>
+		
+		<!-- 5. setArray(String[] arr) 호출 -->
+		<property name="array">
+			<array>
+				<value>고현정</value>
+				<value>김혜수</value>
+				<value>전지현</value>
+			</array>
+		</property>
+		
+		<!-- 6. setList(List<String> List) 호출 -->
+		<property name="list">
+			<list>
+				<value>봄</value>
+				<value>여름</value>
+				<value>가을</value>
+				<value>겨울</value>
+			</list>
+		</property>
+		
+		<!-- 7. setSet(Set<String> set) 호출 -->
+		<property name="set">
+			<set>
+				<value>1</value>
+				<value>1</value>
+				<value>2</value>
+				<value>2</value>
+				<value>3</value>
+			</set>
+		</property>
+		
+		<!-- 8. setMap(Map<String, String> map) 호출 -->
+		<!-- 1:봄 2:여름 3:가을 4:겨울 -->
+		<property name="map">
+			<map>
+				<entry>
+					<key><value>1</value></key>
+					<value>봄</value>
+				</entry>
+				<entry>
+					<key><value>2</value></key>
+					<value>여름</value>
+				</entry>
+				<entry key="3" value="가을"></entry>
+				<entry key="4" value="겨울"></entry>
+			</map>
+		</property>
+		
+		<!-- 9. setScore(List<Score> list) 호출 -->
+		<property name="score">
+			<list>
+				<bean class="com.test01.Score">
+					<property name="name" value="이순신" />
+					<property name="kor" value="100" />
+					<property name="eng" value="100" />
+					<property name="math" value="100" />
+				</bean>
+				<ref bean="hong"/>
+			</list>
+		</property>
+		
+	</bean>
+	
+	<bean id="hong" class="com.test01.Score">
+		<constructor-arg value="홍길동" />
+		<constructor-arg value="100" />
+		<constructor-arg value="100" />
+		<constructor-arg value="100" />
+	</bean>
+
+</beans>

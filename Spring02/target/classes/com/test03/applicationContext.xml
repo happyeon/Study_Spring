@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="park" class="com.test03.Address">
+		<property name="name" value="박보영" />
+		<property name="addr" value="서울시 강남구" />
+		<property name="phone" value="010-3433-2343" />
+	</bean>
+
+	<bean id="kim" class="com.test03.Address">
+		<property name="name" value="김서형" />
+		<property name="addr" value="서울시 마포구" />
+		<property name="phone" value="010-9786-5867" />
+	</bean>
+	
+</beans>

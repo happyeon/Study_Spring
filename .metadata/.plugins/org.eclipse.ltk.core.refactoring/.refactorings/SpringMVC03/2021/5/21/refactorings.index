@@ -1,0 +1,7 @@
+1621324371102	Move 'root-context.xml' to 'appServlet'
+1621324391137	Rename resource 'root-context.xml'
+1621325869689	Rename package 'com.mvc.update.model.dto'
+1621325891449	Rename type 'MyBoardDto'
+1621327001762	Delete element
+1621328055838	Delete element
+1621338015277	Rename resource 'myboarddetail.jsp'
